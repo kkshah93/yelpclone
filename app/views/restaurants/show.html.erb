@@ -37,7 +37,7 @@
 
 			<% @reviews.each do |review| %>
 
-				<p><%= review.rating %></p>
+				<div class="star-rating" data-score= <%= review.rating %> ></div>
 				<p><%= review.comment %></p>
 
 			<% end %> 
@@ -58,3 +58,13 @@
 
 <%= link_to 'Edit', edit_restaurant_path(@restaurant), class: "btn btn-link" %> |
 <%= link_to 'Back', restaurants_path, class: "btn btn-link" %>
+
+<script src="jquery.raty.js"></script>
+<script> 
+
+	$('.star-rating').raty({
+
+		path: 'http://www.howtodrawguide.com/wp-content/uploads/image/how-to-draw-cartoons/how-to-draw-a-star/stea.jpg'
+	});
+
+</script>
